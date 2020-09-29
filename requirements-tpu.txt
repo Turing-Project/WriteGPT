@@ -1,0 +1,9 @@
+pandas==0.24.2
+regex==2019.4.14
+h5py==2.9.0
+numpy==1.16.2
+tensorboard==1.13.1
+tensorflow==1.13.1
+tensorflow-estimator==1.13.0
+tqdm==4.31.1
+requests==2.22.0
