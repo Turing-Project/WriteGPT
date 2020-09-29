@@ -333,6 +333,25 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 * **训练EssayKiller需要多少钱？**
 从头到尾训练完pipeline的话在1K～100K人民币不等，取决于你有无分布式集群可用
 
+<br>
+
+## Citation
+```
+@misc{EssayKillerBrain,
+  author = {Turing's Cat},
+  title = {Autowritting Ai Framework},
+  year = {2020},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/EssayKillerBrain/EssayKiller}},
+}
+```
+
+<br>
+
+## 免责声明
+该项目中的内容仅供技术研究与科普，不作为任何结论性依据，不提供任何商业化应用授权
+
 ## 参考资料  
 [1] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding  
 [2] ERNIE: Enhanced Representation through Knowledge Integration  
@@ -363,23 +382,3 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 [27] https://github.com/OYE93/Chinese-NLP-Corpus  
 [28] https://github.com/CLUEbenchmark/CLUECorpus2020  
 [29] https://github.com/zhiyou720/chinese_summarizer  
-
-<br>
-
-## Citation
-```
-@misc{EssayKillerBrain,
-  author = {Turing's Cat},
-  title = {Autowritting Ai Framework},
-  year = {2020},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/EssayKillerBrain/EssayKiller}},
-}
-```
-
-<br>
-
-## 免责声明
-该项目中的内容仅供技术研究与科普，不作为任何结论性依据，不提供任何商业化应用授权
-
