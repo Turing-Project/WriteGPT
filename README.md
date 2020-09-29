@@ -41,13 +41,13 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-15-22-13.png)
 
 * 第二部：加载模型
-![](@attachment/Clipboard_2020-09-29-15-27-38.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-15-27-38.png)
 
 * 第三步：文章生成
-![](@attachment/Clipboard_2020-09-29-15-27-14.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-15-27-14.png)
 
 * 写作效果
-![](@attachment/Clipboard_2020-09-29-15-23-27.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-15-23-27.png)
 
 
 ## 本地环境
@@ -75,8 +75,8 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 
 ## 模型结构
 整个框架分为EAST、CRNN、Bert、GPT-2、DNN 5个模块，每个模块的网络单独训练，参数相互独立。infer过程使用pipeline串联，通过外接装置直接输出到答题卡。
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-15-35-00.png)
 
-![](@attachment/Clipboard_2020-09-29-15-35-00.png)
 
 ### 1. 输入
 高考语文试卷作文题
@@ -86,7 +86,7 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 ### 2. 识别网络
 #### 2.1 EAST文本检测
 OpenCV 的EAST文本检测器是一个深度学习模型，它能够在 720p 的图像上以13帧/秒的速度实时检测任意方向的文本，并可以获得很好的文本检测精度。
-![](@attachment/Clipboard_2020-09-29-15-45-54.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-15-45-54.png)
 
 <br>
 
@@ -114,7 +114,7 @@ python multigpu_train.py --gpu_list=0 --input_size=512 --batch_size_per_gpu=14 -
 <br>
 
 *检测结果*
-![](@attachment/Clipboard_2020-09-29-16-25-01.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-16-25-01.png)
 
 除了EAST，也可以把识别网络替换为传统的CTPN等模型，github上有已经成熟的项目：https://github.com/Walleclipse/ChineseAddress_OCR
 
@@ -162,12 +162,12 @@ Epoch 8/100
 BERT的全称是Bidirectional Encoder Representation from Transformers，即双向Transformer的Encoder。模型的主要创新点在pre-train方法上，用了Masked LM和Next Sentence Prediction两种方法分别捕捉词语和句子级别的representation。
 
 模型的构成元素Transformer可以参考Google的 [Attention is all you need](https://arxiv.org/abs/1706.03762) ，BERT模型的结构如下图最左：
-![](@attachment/Clipboard_2020-09-29-16-44-54.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-16-44-54.png)
 
 对比OpenAI GPT(Generative pre-trained transformer)，BERT是双向的Transformer block连接；就像单向RNN和双向RNN的区别，直觉上来讲效果会好一些。
 <br>
 
-在原论文中，作者展示了新的语言训练模型，称为编码语言模型与次一句预测 
+在原论文中，作者展示了新的语言训练模型，称为编码语言模型与下一句预测 
 
 
 Original Paper : 3.3.1 Task #1: Masked LM
@@ -180,7 +180,7 @@ Target Sequence :                  the                his
 * 10%的tokens会称为‘随机’token
 * 10%的tokens会保持不变但需要被预测
 
-次一句预测
+下一句预测
 
 > Input : [CLS] the man went to the store [SEP] he bought a gallon of milk [SEP]
 Label : Is Next
@@ -203,12 +203,12 @@ python run.py --model bert
 ```
 <br>
 
-![](@attachment/Clipboard_2020-09-29-16-40-19.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-16-40-19.png)
 
 测试时，需要用正则表达式过滤考试专用词，包括“阅读下面的材料，根据要求写作”，“要求：xxx”，“请完成/请结合/请综合xx”。
 
 比如
->![](@attachment/Clipboard_2020-09-29-17-17-30.png)
+>![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-17-17-30.png)
 
 
     人们用眼睛看他人、看世界，却无法直接看到完整的自己。所以，在人生的旅程中，我们需要寻找各种“镜子”、不断绘制“自画像”来审视自我，尝试回答“我是怎样的人”“我想过怎样的生活”“我能做些什么”“如何生活得更有意义”等重要的问题。
@@ -251,10 +251,12 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 ### 3.判分网络
 
 #### 3.1 DNN判分模型
-![](@attachment/Clipboard_2020-09-29-18-59-12.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-18-59-12.png)
+
 这部分直接调用百度API。有现成的模型就不重复造轮子了，具体实现方式百度没有开源，这里简单描述一下语言模型的概念：
 语言模型是通过计算给定词组成的句子的概率，从而判断所组成的句子是否符合客观语言表达习惯。通常用于机器翻译、拼写纠错、语音识别、问答系统、词性标注、句法分析和信息检索等。
-![](@attachment/Clipboard_2020-09-29-18-59-57.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-18-59-57.png)
+
 这里使用通顺度打分作为判断依据。
 
 #### 3.2 高考排版器
@@ -270,19 +272,20 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 4. 字数不能过长或过短
 
 由于模型输出的文章不保证换行和分段，通过统计高考作文的常见段数、每段句数，编写脚本对输出进行划分。大多数情况下分段排版的结果都比较合理。
-![](@attachment/Clipboard_2020-09-29-19-04-24.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-19-04-24.png)
+
 <br>
 
 ## 输出
 **答题卡**
-![](@attachment/Clipboard_2020-09-29-19-07-53.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-19-07-53.png)
 
 **外接装置**
 
 基于aedraw，一款开源的CNC(Computer Numerical Control数控机床)画图机器人，具有绘制图案、写字等功能，它也可以升级为激光雕刻等用途。
 详细教程见 http://aelab.net/ ，不仅能自己制作一台写字绘画机器人，而且能够掌握其工作原理拓展更多的应用。
 
-![](@attachment/Clipboard_2020-09-29-19-12-07.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-19-12-07.png)
 
 原版的输出临摹装置存在速度慢和格式不准的问题，通过改装和修改源代码得以优化
 
@@ -330,26 +333,26 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 从头到尾训练完pipeline的话在1K～100K人民币不等，取决于你有无分布式集群可用
 
 ## 参考文献
-[1] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
-[2] ERNIE: Enhanced Representation through Knowledge Integration
-[3] Fine-tune BERT for Extractive Summarization
-[4] EAST: An Efficient and Accurate Scene Text Detector 
-[5] An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition
-[6] Language Models are Unsupervised Multitask Learners
-[7] https://github.com/Morizeyao/GPT2-Chinese
-[8] https://github.com/argman/EAST
-[9] https://github.com/bgshih/crnn
-[10] https://github.com/zhiyou720/chinese_summarizer
-[11] https://zhuanlan.zhihu.com/p/64737915
-[12] https://github.com/ouyanghuiyu/chineseocr_lite
-[13] https://github.com/google-research/bert
-[14] https://github.com/rowanz/grover
-[15] https://github.com/wind91725/gpt2-ml-finetune-
-[16] https://github.com/guodongxiaren/README
-[17] https://www.jianshu.com/p/55560d3e0e8a
-[18] https://github.com/YCG09/chinese_ocr
-[19] https://github.com/xiaomaxiao/keras_ocr
-[20] https://github.com/nghuyong/ERNIE-Pytorch
+[1] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding  
+[2] ERNIE: Enhanced Representation through Knowledge Integration  
+[3] Fine-tune BERT for Extractive Summarization  
+[4] EAST: An Efficient and Accurate Scene Text Detector  
+[5] An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition  
+[6] Language Models are Unsupervised Multitask Learners  
+[7] https://github.com/Morizeyao/GPT2-Chinese  
+[8] https://github.com/argman/EAST  
+[9] https://github.com/bgshih/crnn  
+[10] https://github.com/zhiyou720/chinese_summarizer  
+[11] https://zhuanlan.zhihu.com/p/64737915  
+[12] https://github.com/ouyanghuiyu/chineseocr_lite  
+[13] https://github.com/google-research/bert  
+[14] https://github.com/rowanz/grover  
+[15] https://github.com/wind91725/gpt2-ml-finetune-  
+[16] https://github.com/guodongxiaren/README  
+[17] https://www.jianshu.com/p/55560d3e0e8a  
+[18] https://github.com/YCG09/chinese_ocr  
+[19] https://github.com/xiaomaxiao/keras_ocr  
+[20] https://github.com/nghuyong/ERNIE-Pytorch  
 <br>
 
 ## Citation
@@ -367,5 +370,5 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 <br>
 
 ## 免责声明
-    该项目中的内容仅供技术研究与科普，不作为任何结论性依据，不提供任何商业化应用授权
+该项目中的内容仅供技术研究与科普，不作为任何结论性依据，不提供任何商业化应用授权
 
