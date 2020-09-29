@@ -227,7 +227,8 @@ python run.py --model bert
 **预训练**
 参考 [GPT2-ML](https://github.com/imcaspar/gpt2-ml/) 预训练模型，使用 [Quadro RTX 8000](https://www.nvidia.com/en-us/design-visualization/quadro/rtx-8000/) 训练 28w 步
 
-[训练图片1] [训练图片2]
+>![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/2233.png)
+
 
 <br>
 
@@ -306,7 +307,7 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 整个AI的参数量分布不均匀，主要原因在于，这是一个语言类AI，99%的参数量集中在语言网络中，其中GPT-2（15亿）占88%，BERT（1.1亿）占7%，其他的识别网络和判分网络共占5%。
 
 ### 当前问题
-* 输出的格式和高考作文答题卡还不能完美契合，之后的参数需要微调一下。为了国庆前完成，我还没来得及优化
+* 输出的格式和高考作文还不能完美契合，之后的参数需要微调一下。为了国庆前完成，我还没来得及优化
 * 生成的100篇作文里有很大一部分其实算不上合格的作文，有些只能勉强及格，有些甚至能拿零分（占比不多），显然GPT-2的能力有限。为了视频效果我只选了相对好的几篇做展示
 
 ## Q&A
@@ -332,7 +333,7 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 * **训练EssayKiller需要多少钱？**
 从头到尾训练完pipeline的话在1K～100K人民币不等，取决于你有无分布式集群可用
 
-## 参考文献
+## 参考资料  
 [1] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding  
 [2] ERNIE: Enhanced Representation through Knowledge Integration  
 [3] Fine-tune BERT for Extractive Summarization  
@@ -353,6 +354,16 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 [18] https://github.com/YCG09/chinese_ocr  
 [19] https://github.com/xiaomaxiao/keras_ocr  
 [20] https://github.com/nghuyong/ERNIE-Pytorch  
+[21] https://zhuanlan.zhihu.com/p/43534801  
+[22] https://blog.csdn.net/xuxunjie147/article/details/87178774/  
+[23] https://github.com/JiangYanting/Pre-modern_Chinese_corpus_dataset  
+[24] https://github.com/brightmart/nlp_chinese_corpus  
+[25] https://github.com/SophonPlus/ChineseNlpCorpus  
+[26] https://github.com/THUNLP-AIPoet/Resources  
+[27] https://github.com/OYE93/Chinese-NLP-Corpus  
+[28] https://github.com/CLUEbenchmark/CLUECorpus2020  
+[29] https://github.com/zhiyou720/chinese_summarizer  
+
 <br>
 
 ## Citation
