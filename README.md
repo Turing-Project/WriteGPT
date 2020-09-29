@@ -349,8 +349,6 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 
 <br>
 
-## 免责声明
-该项目中的内容仅供技术研究与科普，不作为任何结论性依据，不提供任何商业化应用授权
 
 ## 参考资料  
 [1] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding  
@@ -382,3 +380,7 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 [27] https://github.com/OYE93/Chinese-NLP-Corpus  
 [28] https://github.com/CLUEbenchmark/CLUECorpus2020  
 [29] https://github.com/zhiyou720/chinese_summarizer  
+
+
+## 免责声明
+该项目中的内容仅供技术研究与科普，不作为任何结论性依据，不提供任何商业化应用授权
