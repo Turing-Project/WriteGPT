@@ -15,7 +15,7 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 | 项目作者        | 主页1           | 主页2  | 主页3 |
 | ------------- |:-------------:|:----:|:---:|
 | 图灵的猫       | ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/2234.jpg)
-[知乎](https://www.zhihu.com/people/dong-xi-97-29)       | ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/2235.jpg)[B站](https://space.bilibili.com/371846699) | ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/2236.PNG)[Youtube](https://www.youtube.com/channel/UCoEVP6iTw5sfozUGLLWJyDg/featured) |
+ [知乎](https://www.zhihu.com/people/dong-xi-97-29) | ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/2235.jpg) [B站](https://space.bilibili.com/371846699) | ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/2236.PNG) [Youtube](https://www.youtube.com/channel/UCoEVP6iTw5sfozUGLLWJyDg/featured) |
 
 
 **致谢**
