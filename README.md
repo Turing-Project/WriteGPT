@@ -261,10 +261,10 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 
 #### 3.2 高考排版器
 
-*标题*
+*标题*  
 复用BERT_SUM生成Top3的NER粒度token作为标题
 
-*主体*
+*主体*  
 高考议论文的写作格式要求如下：
 1. 标题居中，一般少于20字
 2. 每段段首缩进两格
@@ -277,7 +277,7 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 <br>
 
 ## 输出
-**答题卡**
+**答题卡**  
 ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-19-07-53.png)
 
 **外接装置**
