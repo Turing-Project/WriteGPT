@@ -14,7 +14,7 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 
 | 项目作者        | 主页1           | 主页2  | 主页3 |
 | ------------- |:-------------:|:----:|:---:|
-| 图灵的猫       | [知乎](https://www.zhihu.com/people/dong-xi-97-29)       | [B站](https://space.bilibili.com/371846699) | Youtube |
+| 图灵的猫       | [知乎](https://www.zhihu.com/people/dong-xi-97-29)       | [B站](https://space.bilibili.com/371846699) | [Youtube](https://www.youtube.com/channel/UCoEVP6iTw5sfozUGLLWJyDg/channels) |
 
 
 **致谢**
@@ -227,7 +227,7 @@ python run.py --model bert
 **预训练**
 参考 [GPT2-ML](https://github.com/imcaspar/gpt2-ml/) 预训练模型，使用 [Quadro RTX 8000](https://www.nvidia.com/en-us/design-visualization/quadro/rtx-8000/) 训练 28w 步
 
->![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/2233.png)
+>![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/2233.PNG)
 
 
 <br>
@@ -299,10 +299,10 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 
 | 模型        | 参数量           | 下载链接  | 备注 |
 | ------------- |:-------------:|:----:|:---:|
-| EAST  | < 0.1 Billion  | [网盘链接](https://pan.baidu.com/s/1S9WpyXZ_wVWbKo-WsB0q5A) 提取码：sxhh| 检测模型 |
+| EAST  | < 0.1 Billion  | [GoogleDrive](https://pan.baidu.com/s/1S9WpyXZ_wVWbKo-WsB0q5A) 提取码：sxhh| 检测模型 |
 | CRNN | < 0.1 Billion   | [网盘链接](https://eyun.baidu.com/s/3dEUJJg9) 提取码：vKeD| 识别模型 |
-| BERT | 0.1 Billion   | [网盘链接](https://pan.baidu.com/s/1BrdFSx9_n1q2uWBiQrpalw) 提取码：kim2| 摘要模型 |
-| GPT-2 | 1.5 Billion   |  | 生成模型 |
+| BERT | 0.1 Billion   | [GoogleDrive](https://pan.baidu.com/s/1BrdFSx9_n1q2uWBiQrpalw) 提取码：kim2| 摘要模型 |
+| GPT-2 | 1.5 Billion   | [GoogleDrive](https://drive.google.com/file/d/1ujWYTOvRLGJX0raH-f-lPZa3-RN58ZQx/view?usp=sharing)  | 生成模型 |
 
 整个AI的参数量分布不均匀，主要原因在于，这是一个语言类AI，99%的参数量集中在语言网络中，其中GPT-2（15亿）占88%，BERT（1.1亿）占7%，其他的识别网络和判分网络共占5%。
 
