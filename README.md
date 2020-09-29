@@ -1,12 +1,5 @@
----
-attachments: [Clipboard_2020-09-29-15-22-13.png, Clipboard_2020-09-29-15-23-27.png, Clipboard_2020-09-29-15-26-19.png, Clipboard_2020-09-29-15-27-14.png, Clipboard_2020-09-29-15-27-38.png, Clipboard_2020-09-29-15-35-00.png, Clipboard_2020-09-29-15-41-57.png, Clipboard_2020-09-29-15-45-54.png, Clipboard_2020-09-29-16-25-01.png, Clipboard_2020-09-29-16-40-19.png, Clipboard_2020-09-29-16-44-54.png, Clipboard_2020-09-29-17-17-30.png, Clipboard_2020-09-29-18-59-12.png, Clipboard_2020-09-29-18-59-57.png, Clipboard_2020-09-29-19-04-24.png, Clipboard_2020-09-29-19-07-53.png, Clipboard_2020-09-29-19-10-56.png, Clipboard_2020-09-29-19-12-07.png, Clipboard_2020-09-29-19-44-51.png]
-title: EssayKiller
-created: '2020-09-29T03:33:24.278Z'
-modified: '2020-09-29T12:29:11.557Z'
----
 
 # EssayKiller
-
 
 
 
@@ -45,7 +38,7 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 当前线上仅开放文本生成功能，输入对应句子，AI返回生成文章。同一个句子可以输入多次，每一次输出都不同。也可以选择同时生成多篇文章。具体见：[17亿参数作文杀手](https://colab.research.google.com/drive/1rcgQ2Zh_eBilJ40bJ5fd9Xq14D9YGAeh#scrollTo=9W1aX_U0K2VH)
 
 * 第一步：安装环境
-![](@attachment/Clipboard_2020-09-29-15-22-13.png)
+![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/ReferencesPaper/attachments/Clipboard_2020-09-29-15-22-13.png)
 
 * 第二部：加载模型
 ![](@attachment/Clipboard_2020-09-29-15-27-38.png)
