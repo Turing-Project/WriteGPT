@@ -27,7 +27,7 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 - [x] 基于EAST、CRNN、Bert和GPT-2语言模型的高考作文生成AI
 - [x] 支持bert tokenizer，当前版本基于clue chinese vocab
 - [x] 17亿参数多模块异构深度神经网络，超2亿条预训练数据
-- [x] 线上点击即用的文本生成效果demo：[17亿参数作文杀手](https://colab.research.google.com/drive/1rcgQ2Zh_eBilJ40bJ5fd9Xq14D9YGAeh#scrollTo=9W1aX_U0K2VH)
+- [x] 线上点击即用的文本生成效果demo：[17亿参数作文杀手](https://colab.research.google.com/github/EssayKillerBrain/EssayKiller_V2/blob/master/colab_online.ipynb)
 - [x] 端到端生成，从试卷识别到答题卡输出一条龙服务
 
 
@@ -35,7 +35,7 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 ### Colab线上作文生成功能
 国内没有足够显存的免费GPU平台，所以配合Google Drive将训练好的AI核心功能Language Network写作模块迁移到Colab。
 
-当前线上仅开放文本生成功能，输入对应句子，AI返回生成文章。同一个句子可以输入多次，每一次输出都不同。也可以选择同时生成多篇文章。具体见：[17亿参数作文杀手](https://colab.research.google.com/drive/1rcgQ2Zh_eBilJ40bJ5fd9Xq14D9YGAeh#scrollTo=9W1aX_U0K2VH)
+当前线上仅开放文本生成功能，输入对应句子，AI返回生成文章。同一个句子可以输入多次，每一次输出都不同。也可以选择同时生成多篇文章。具体见：[17亿参数作文杀手](https://colab.research.google.com/github/EssayKillerBrain/EssayKiller_V2/blob/master/colab_online.ipynb)
 
 * 第一步：安装环境
 ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/Clipboard_2020-09-29-15-22-13.png)
@@ -311,27 +311,27 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 * 生成的100篇作文里有很大一部分其实算不上合格的作文，有些只能勉强及格，有些甚至能拿零分（占比不多），显然GPT-2的能力有限。为了视频效果我只选了相对好的几篇做展示
 
 ## Q&A
-* **我能否用EssayKiller来帮自己写作业？**
-  不能。所以有下一个问题：
+* **我能否用EssayKiller来帮自己写作业？**  
+  不能。所以有下一个问题：  
   
-* **为什么缺少一些关键文件？**
-项目在一开始是完全开源的，经过慎重考虑我认为完全开源会被部分别有用心的人用以牟利，甚至用作不法用途。参考咸鱼和淘宝上一些魔改的开源框架应用。部分懂技术又不想动笔的小同志可能会让Essaykiller帮自己写作业，比如读后感、课后作文、思修小论文。我想说，这样不好。
+* **为什么缺少一些关键文件？**  
+项目在一开始是完全开源的，经过慎重考虑我认为完全开源会被部分别有用心的人用以牟利，甚至用作不法用途。参考咸鱼和淘宝上一些魔改的开源框架应用。部分懂技术又不想动笔的小同志可能会让Essaykiller帮自己写作业，比如读后感、课后作文、思修小论文。我想说，这样不好。  
 
-* **为什么不直接加密？**
-本来打算用混淆加密，但一些模块本就是开源的，所以我开源了整体的模型文件，只隐藏了关键的，包括pipeline、输入输出在内的文件，另外有些文件里也加了盐。
+* **为什么不直接加密？**  
+本来打算用混淆加密，但一些模块本就是开源的，所以我开源了整体的模型文件，只隐藏了关键的，包括pipeline、输入输出在内的文件，另外有些文件里也加了盐。  
 
-* **有哪些模组可用？**
+* **有哪些模组可用？**  
 目前完全开源，可以独立复用的部分包括：
   - [x] 检测网络
   - [x] 文本摘要网络
   - [x] 文本生成网络
-  - [x] 判分网络与排版脚本
+  - [x] 判分网络与排版脚本  
 
-* **为什么不用GPT-3**
-训练一个中文GPT-3的价格至少为1200万美元，折合人民币将近1亿。要是真有人训练出来一个中文GPT-3还开源模型文件了，我愿称之为最强。
+* **为什么不用GPT-3**  
+训练一个中文GPT-3的价格至少为1200万美元，折合人民币将近1亿。要是真有人训练出来一个中文GPT-3还开源模型文件了，我愿称之为最强。  
 
-* **训练EssayKiller需要多少钱？**
-从头到尾训练完pipeline的话在1K～100K人民币不等，取决于你有无分布式集群可用
+* **训练EssayKiller需要多少钱？**  
+从头到尾训练完pipeline的话在1K～100K人民币不等，取决于你有无分布式集群可用  
 
 <br>
 
