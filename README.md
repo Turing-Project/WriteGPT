@@ -74,7 +74,7 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 * 2020.09.14 排版脚本与输出装置改装
 
 ## 模型结构
-整个框架分为EAST、CRNN、Bert、GPT-2、DNN 5个模块，每个模块的网络单独训练，参数相互独立。infer过程使用pipeline串联，通过外接装置直接输出到答题卡。
+整个框架分为EAST、CRNN、Bert、GPT-2、DNN 5个模块，每个模块的网络单独训练，参数相互独立。infer过程使用pipeline串联，通过外接装置直接输出到答题卡。  
 ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/Clipboard_2020-09-29-15-35-00.png)
 
 
@@ -85,7 +85,7 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 
 ### 2. 识别网络
 #### 2.1 EAST文本检测
-OpenCV 的EAST文本检测器是一个深度学习模型，它能够在 720p 的图像上以13帧/秒的速度实时检测任意方向的文本，并可以获得很好的文本检测精度。
+OpenCV 的EAST文本检测器是一个深度学习模型，它能够在 720p 的图像上以13帧/秒的速度实时检测任意方向的文本，并可以获得很好的文本检测精度。  
 ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/Clipboard_2020-09-29-15-45-54.png)
 
 <br>
@@ -126,7 +126,7 @@ python multigpu_train.py --gpu_list=0 --input_size=512 --batch_size_per_gpu=14 -
 
 下载[训练集](https://pan.baidu.com/s/1E_1iFERWr9Ro-dmlSVY8pA)：共约364万张图片，按照99: 1划分成训练集和验证集
 
-数据利用中文语料库（新闻 + 文言文），通过字体、大小、灰度、模糊、透视、拉伸等变化随机生成。包含汉字、英文字母、数字和标点共5990个字符，每个样本固定10个字符，字符随机截取自语料库中的句子，图片分辨率统一为280x32。
+数据利用中文语料库（新闻 + 文言文），通过字体、大小、灰度、模糊、透视、拉伸等变化随机生成。包含汉字、英文字母、数字和标点共5990个字符，每个样本固定10个字符，字符随机截取自语料库中的句子，图片分辨率统一为280x32。  
 
 *修改/train/config.py中train_data_root，validation_data_root以及image_path*
 
@@ -255,10 +255,10 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/Clipboard_2020-09-29-18-59-12.png)
 
 这部分直接调用百度API。有现成的模型就不重复造轮子了，具体实现方式百度没有开源，这里简单描述一下语言模型的概念：
-语言模型是通过计算给定词组成的句子的概率，从而判断所组成的句子是否符合客观语言表达习惯。通常用于机器翻译、拼写纠错、语音识别、问答系统、词性标注、句法分析和信息检索等。
+语言模型是通过计算给定词组成的句子的概率，从而判断所组成的句子是否符合客观语言表达习惯。通常用于机器翻译、拼写纠错、语音识别、问答系统、词性标注、句法分析和信息检索等。  
 ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/Clipboard_2020-09-29-18-59-57.png)
 
-这里使用通顺度打分作为判断依据。
+这里使用通顺度打分作为判断依据。  
 
 #### 3.2 高考排版器
 
@@ -272,7 +272,7 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 3. 每个字符尽量保持在字体框内
 4. 字数不能过长或过短
 
-由于模型输出的文章不保证换行和分段，通过统计高考作文的常见段数、每段句数，编写脚本对输出进行划分。大多数情况下分段排版的结果都比较合理。
+由于模型输出的文章不保证换行和分段，通过统计高考作文的常见段数、每段句数，编写脚本对输出进行划分。大多数情况下分段排版的结果都比较合理。  
 ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/Clipboard_2020-09-29-19-04-24.png)
 
 <br>
@@ -284,7 +284,7 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 **外接装置**
 
 基于aedraw，一款开源的CNC(Computer Numerical Control数控机床)画图机器人，具有绘制图案、写字等功能，它也可以升级为激光雕刻等用途。
-详细教程见 http://aelab.net/ ，不仅能自己制作一台写字绘画机器人，而且能够掌握其工作原理拓展更多的应用。
+详细教程见 http://aelab.net/ ，不仅能自己制作一台写字绘画机器人，而且能够掌握其工作原理拓展更多的应用。  
 
 ![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/Clipboard_2020-09-29-19-12-07.png)
 
@@ -309,6 +309,7 @@ CUDA_VISIBLE_DEVICES=0  python train/train_wc.py --input_file=/data/EssayKiller/
 ### 当前问题
 * 输出的格式和高考作文还不能完美契合，之后的参数需要微调一下。为了国庆前完成，我还没来得及优化
 * 生成的100篇作文里有很大一部分其实算不上合格的作文，有些只能勉强及格，有些甚至能拿零分（占比不多），显然GPT-2的能力有限。为了视频效果我只选了相对好的几篇做展示
+* 英文版的说明还没来得及写，有空的同学可以翻译一下提个pr
 
 ## Q&A
 * **我能否用EssayKiller来帮自己写作业？**  
