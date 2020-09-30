@@ -224,7 +224,7 @@ python run.py --model bert
 预训练语料来自 [THUCNews](http://thuctc.thunlp.org/#%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E6%95%B0%E6%8D%AE%E9%9B%86THUCNews) 以及 [nlp_chinese_corpus](https://github.com/brightmart/nlp_chinese_corpus)，清洗后总文本量约 15G。
  Finetune语料来自历年满分高考作文、优质散文集以及近现代散文作品，约1000篇。  
 
-**预训练**
+**预训练**  
 参考 [GPT2-ML](https://github.com/imcaspar/gpt2-ml/) 预训练模型，使用 [Quadro RTX 8000](https://www.nvidia.com/en-us/design-visualization/quadro/rtx-8000/) 训练 28w 步
 
 >![](https://github.com/EssayKillerBrain/EssayKiller_V2/blob/master/References/attachments/2233.PNG)
@@ -232,7 +232,7 @@ python run.py --model bert
 
 <br>
 
-**Finetue**
+**Finetune**
 
 ```bash
 1、进入dataset目录
