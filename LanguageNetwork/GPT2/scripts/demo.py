@@ -186,9 +186,9 @@ with tf.compat.v1.Session(config=tf_config, graph=tf.Graph()) as sess:
     print("**********************************************作文题目**********************************************\n")
     while text != "":
         for i in range(args.samples):
-            print("正在生成第,", i + 1, " of ", args.samples , "篇文章\n")
+            print("正在生成第 ", i + 1, " of ", args.samples , "篇文章\n")
             print("......\n")
-            print("EssayKilelr正在飞速写作中，请稍后......\n")
+            print("EssayKiller正在飞速写作中，请稍后......\n")
 
             line = convert_to_unicode(text)
             bert_tokens = tokenizer.tokenize(line)
