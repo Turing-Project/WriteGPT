@@ -19,7 +19,7 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 
 **致谢**
 
-感谢共同作者[@imcaspar](https://github.com/imcaspar)  提供GPT-2中文预训练框架与数据支持。
+感谢开源作者[@imcaspar](https://github.com/imcaspar)  提供GPT-2中文预训练框架与数据支持。
 感谢[@白小鱼博士](https://www.zhihu.com/people/youngfish42) 、[@YJango博士](https://www.zhihu.com/people/YJango) 、[@画渣花小烙](https://space.bilibili.com/402576555)、[@万物拣史](https://space.bilibili.com/328531988/) 、[@柴知道](https://space.bilibili.com/26798384/)、[@风羽酱-sdk](https://space.bilibili.com/17466521/)、[@WhatOnEarth](https://space.bilibili.com/410527811/)、[@这知识好冷](https://space.bilibili.com/403943112/)、[@科技狐](https://space.bilibili.com/40433405/) 的参与和支持
 <br>
 
