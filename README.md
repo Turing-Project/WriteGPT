@@ -7,7 +7,7 @@
 
 通用型议论文创作人工智能框架，仅限交流与科普。
 
-Bilibili视频地址：https://www.bilibili.com/video/av669847658/
+Bilibili视频地址：https://www.bilibili.com/video/BV1pr4y1w7uM/
 
 ## 项目简介
 EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创作AI框架，目前第一版finetune模型针对高考作文（主要是议论文），可以有效生成符合人类认知的文章，多数文章经过测试可以达到正常高中生及格作文水平。
