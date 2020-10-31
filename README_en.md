@@ -328,7 +328,7 @@ I orginally intended to use obfuscated encryption, but some modules are already 
 
 * **Which modules are available to use?**  
 Now it's fully open source, parts able to independently reused includes:
-  - [<32;71;36Måx] Detection Network
+  - [x] Detection Network
   - [x] Text Summarisation Network
   - [x] Text Generation Network
   - [x] Scoring Network and typesetting scripts
