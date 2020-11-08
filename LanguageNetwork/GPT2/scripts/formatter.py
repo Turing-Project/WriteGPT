@@ -84,7 +84,7 @@ def coarse_formatter(text):
 	if(lens >= 10):
 		while count < lens - 5:
 			#print("para: ", para ," | final: ", lens - 8)
-			paras.append(text_list[para:para+5])
+			paras.append(text_list[count:count+5])
 			count += 5
 		# print("现在添加段尾：", text_list[para:-1])
 		if count == lens - 1:
@@ -92,9 +92,9 @@ def coarse_formatter(text):
 		else:
 			paras.append(text_list[count:-1])
 	else:
-		paras.append(3)
-		paras.append(lens - 5)
-		paras.append(lens - 3)
+		paras.append(text_list[:3])
+		paras.append(text_list[3:lens - 5])
+		paras.append(text_list[lens - 5:lens])
 	# print("最终段落为：", paras)
 	for para in paras:
 		# print("paras: ", para)

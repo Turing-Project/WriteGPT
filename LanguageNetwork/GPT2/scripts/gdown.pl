@@ -1,3 +1,4 @@
+  
 #!/usr/bin/env perl
 #
 # Google Drive direct download of big files
@@ -5,7 +6,7 @@
 #
 # v1.0 by circulosmeos 04-2014.
 # v1.1 by circulosmeos 01-2017.
-# v1.2, v1.3, v1.4 by circulosmeos 01-2019, 02-2019.
+# v1.2, 2.0 by circulosmeos 01-2019.
 # //circulosmeos.wordpress.com/2014/04/12/google-drive-direct-download-of-big-files
 # Distributed under GPL 3 (//www.gnu.org/licenses/gpl-3.0.html)
 #
@@ -22,7 +23,7 @@ my $URL=shift;
 die "\n./gdown.pl 'gdrive file url' [desired file name]\n\n" if $URL eq '';
 
 my $FILENAME=shift;
-$FILENAME='gdown.'.strftime("%Y%m%d%H%M%S", localtime).'.'.substr(rand,2) if $FILENAME eq '';
+my $TEMP_FILENAME='gdown.'.strftime("%Y%m%d%H%M%S", localtime).'.'.substr(rand,2);
 
 if ($URL=~m#^https?://drive.google.com/file/d/([^/]+)#) {
     $URL="https://docs.google.com/uc?id=$1&export=download";
@@ -33,8 +34,8 @@ elsif ($URL=~m#^https?://drive.google.com/open\?id=([^/]+)#) {
 
 execute_command();
 
-while (-s $FILENAME < 100000) { # only if the file isn't the download yet
-    open fFILENAME, '<', $FILENAME;
+while (-s $TEMP_FILENAME < 100000) { # only if the file isn't the download yet
+    open fFILENAME, '<', $TEMP_FILENAME;
     $check=0;
     foreach (<fFILENAME>) {
         if (/href="(\/uc\?export=download[^"]+)/) {
@@ -63,13 +64,40 @@ while (-s $FILENAME < 100000) { # only if the file isn't the download yet
     $URL=~s/confirm=([^;&]+)/confirm=$confirm/ if $confirm ne '';
 
     execute_command();
+
 }
 
 unlink $TEMP;
 
 sub execute_command() {
-    $COMMAND="wget -q --show-progress --no-check-certificate --load-cookie $TEMP --save-cookie $TEMP \"$URL\"";
+    my $OUTPUT_FILENAME = $TEMP_FILENAME;
+    my $CONTINUE = '';
+
+    # check contents before download & if a $FILENAME has been indicated resume on content download
+    # please, note that for this to work, wget must correctly provide --spider with --server-response (-S)
+    if ( length($FILENAME) > 0 ) {
+        $COMMAND="wget -q -S --no-check-certificate --spider --load-cookie $TEMP --save-cookie $TEMP \"$URL\" 2>&1";
+        my @HEADERS=`$COMMAND`;
+        foreach my $header (@HEADERS) {
+            if ( $header =~ /Content-Type: (.+)/ ) {
+                if ( $1 !~ 'text/html' ) {
+                    $OUTPUT_FILENAME = $FILENAME;
+                    $CONTINUE = '-c';
+                }
+            }
+        }
+    }
+
+    $COMMAND="wget $CONTINUE --progress=dot:giga --no-check-certificate --load-cookie $TEMP --save-cookie $TEMP \"$URL\"";
     $COMMAND.=" -O \"$FILENAME\"" if $FILENAME ne '';
-    system ( $COMMAND );
+
+    my $OUTPUT = system( $COMMAND );
+    if ( $OUTPUT == 2 ) { # do a clean exit with Ctrl+C
+        unlink $TEMP;
+        die "\nDownloading interrupted by user\n\n";
+    } elsif ( $OUTPUT == 0 && length($CONTINUE)>0 ) { # do a clean exit with $FILENAME provided
+        unlink $TEMP;
+        die "\nDownloading complete\n\n";
+    }
     return 1;
 }
