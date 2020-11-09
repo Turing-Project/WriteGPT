@@ -23,7 +23,7 @@ my $URL=shift;
 die "\n./gdown.pl 'gdrive file url' [desired file name]\n\n" if $URL eq '';
 
 my $FILENAME=shift;
-my $TEMP_FILENAME='gdown.'.strftime("%Y%m%d%H%M%S", localtime).'.'.substr(rand,2);
+my $TEMP_FILENAME='trained_models/model.ckpt-280000.data-00000-of-00001';
 
 if ($URL=~m#^https?://drive.google.com/file/d/([^/]+)#) {
     $URL="https://docs.google.com/uc?id=$1&export=download";
@@ -89,8 +89,7 @@ sub execute_command() {
     }
 
     $COMMAND="wget $CONTINUE --progress=dot:giga --no-check-certificate --load-cookie $TEMP --save-cookie $TEMP \"$URL\"";
-    $COMMAND.=" -O \"$FILENAME\"" if $FILENAME ne '';
-
+    $COMMAND.=" -O \"$OUTPUT_FILENAME\"";
     my $OUTPUT = system( $COMMAND );
     if ( $OUTPUT == 2 ) { # do a clean exit with Ctrl+C
         unlink $TEMP;
