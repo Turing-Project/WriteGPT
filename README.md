@@ -1,10 +1,6 @@
 
 # EssayKiller
 
-**2021年6月更新**
-训练集中增加了《共产党宣言》、《毛泽东选集》、《陈独秀文集》、《鲁迅文集》等著作，新的模型已经覆盖到原有地址，大家可以调用同样的网页服务来生成文章
-
-
 ![image](https://img.shields.io/badge/License-Apache--2.0-green) ![image](https://img.shields.io/badge/License-MIT-orange)  ![image](https://img.shields.io/badge/License-Anti--996-red)  ![image](https://img.shields.io/badge/pypi-v0.0.1a4-yellowgreen) ![image](https://img.shields.io/badge/stars-%3C%201k-blue) ![image](https://img.shields.io/badge/issues-1%20open-brightgreen)  
 
 通用型议论文创作人工智能框架，仅限交流与科普。
@@ -74,6 +70,9 @@ EssayKiller是基于OCR、NLP领域的最新模型所构建的生成式文本创
 * 2020.08.14 Bert文本摘要模型
 * 2020.08.23 通顺度判分网络测试
 * 2020.09.14 排版脚本与输出装置改装
+* 2021.02.15 修复网页版模型打分
+* 2021.06.10 训练集中增加了《共产党宣言》、《毛泽东选集》、《陈独秀文集》、《鲁迅文集》等著作
+
 
 ## 模型结构
 整个框架分为EAST、CRNN、Bert、GPT-2、DNN 5个模块，每个模块的网络单独训练，参数相互独立。infer过程使用pipeline串联，通过外接装置直接输出到答题卡。  
