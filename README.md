@@ -1,6 +1,8 @@
 
 # EssayKiller
 
+**2021年6月更新**
+训练集中增加了《共产党宣言》、《毛泽东选集》、《陈独秀文集》、《鲁迅文集》等著作，新的模型已经覆盖到原有地址，大家可以调用同样的网页服务来生成文章
 
 
 ![image](https://img.shields.io/badge/License-Apache--2.0-green) ![image](https://img.shields.io/badge/License-MIT-orange)  ![image](https://img.shields.io/badge/License-Anti--996-red)  ![image](https://img.shields.io/badge/pypi-v0.0.1a4-yellowgreen) ![image](https://img.shields.io/badge/stars-%3C%201k-blue) ![image](https://img.shields.io/badge/issues-1%20open-brightgreen)  
