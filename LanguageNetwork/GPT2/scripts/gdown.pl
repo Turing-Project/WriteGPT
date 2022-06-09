@@ -26,10 +26,10 @@ my $FILENAME=shift;
 my $TEMP_FILENAME='trained_models/model.ckpt-280000.data-00000-of-00001';
 
 if ($URL=~m#^https?://drive.google.com/file/d/([^/]+)#) {
-    $URL="https://docs.google.com/uc?id=$1&export=download";
+    $URL="https://docs.google.com/uc?id=$1&export=download&confirm=t";
 }
 elsif ($URL=~m#^https?://drive.google.com/open\?id=([^/]+)#) {
-    $URL="https://docs.google.com/uc?id=$1&export=download";
+    $URL="https://docs.google.com/uc?id=$1&export=download&confirm=t";
 }
 
 execute_command();
