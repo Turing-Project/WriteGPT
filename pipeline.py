@@ -9,119 +9,15 @@
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
-# ±¾ÏîÄ¿½öÏŞÓÚ¼¼Êõ½»Á÷ÓÃÍ¾£¬°üÀ¨ËùÓĞ¿ªÔ´²¿·Ö£¬½ûÖ¹ÓÃÓÚÈÎºÎÉÌÒµÓÃÍ¾
+# æœ¬é¡¹ç›®ä»…é™äºæŠ€æœ¯äº¤æµç”¨é€”ï¼ŒåŒ…æ‹¬æ‰€æœ‰å¼€æºéƒ¨åˆ†ï¼Œç¦æ­¢ç”¨äºä»»ä½•å•†ä¸šç”¨é€”
+#
+#	In order to prevent the EssayKiller framework from being maliciously registered, used or 
+#	copied, we are using legal aid and strict copyright protection.
+#
+#	If you have academic needs, please bring an individual or institution's academic research 
+#	statement and send an email to deanyuton@gmail.com. We are glad to help~
+#	
+#	Thanks for understanding.
 #####################################################################
 
 
-
-# Ê¹ÓÃ´îÔØºÃµÄEssayKilelrBrain¸÷¸öÄ£¿é¹¹Ôìpipeline£¬¶Ëµ½¶ËÊä³öÎÄ±¾
-# ²¿·ÖºËĞÄ´úÂëÒÑ¼ÓÃÜ£¬ÈôÒª»ñÈ¡ÍêÕû°æ±¾Çë¸½ÉÏ¸öÈË/ÑĞ¾¿»ú¹¹Á´½ÓÖ¤Ã÷
-
-from absl import app
-from absl import flags
-import collections
-import tensorflow as tf
-import sys
-import requests
-import numpy as np
-import pandas as pd
-import time
-import random
-import logging
-
-from AutoBrainBase import *
-from RecognizaitonNetwork.text_detection_video import *
-from RecognizaitonNetwork.crnn import *
-from RecognizaitonNetwork.train import *
-from LanguageNetwork.GPT2.scripts import *
-from LanguageNetwork.BERT.models import *
-from LanguageNetwork.BERT.utils import *
-from ScoringNetwork.AutoFormatter import *
-from ScoringNetwork import *
-
-from utils import *
-
-tf.logging.set_verbosity(tf.logging.ERROR)
-tf.get_logger().setLevel('INFO')
-tf.autograph.set_verbosity(1)
-
-FLAGS = flags.FLAGS
-flags.DEFINE_string('gpu', None, 'comma separated list of GPU(s) to use.')
-
-result = []
-
-class EssayKillerPipeline(AutoBrainBase):
-	"""
-	@params
-	input_feed: text input_feed
-	sequence_len: sequence length
-	...
-	In order to prevent the EssayKiller framework from being maliciously registered, used or 
-	copied, the pipeline core code and construction classes are temporarily not open-sourced
-
-	If you have academic needs, please bring an individual or institution's academic needs 
-	statement and send an email to deanyuton@gmail.com. According to the stated information, 
-	I will send the full version of the code and test data to the given mailbox.
-	
-	Thanks for understanding.
-
-	Îª·ÀÖ¹×Ô¶¯»¯Ğ´×÷¿ò¼Ü±»ÈË¶ñÒâÇÀ×¢¡¢ÀûÓÃ»ò¸´¿Ì£¬pipelineºËĞÄ´úÂëÓë¹¹ÔìÀàÔİ²»¿ªÔ´
-	ÈôÓĞÑ§ÊõĞèÒª£¬Çë´øÉÏ¸öÈË»ò»ú¹¹µÄÑ§ÊõĞèÇó³ÂÊö£¬·¢ËÍÓÊ¼şµ½deanyuton@gmail.com
-	¸ù¾İ³ÂÊöĞÅÏ¢£¬ÎÒ½«»á·¢ËÍÍêÕû°æµÄ´úÂëÓë²âÊÔÊı¾İµ½¸ø¶¨µÄÓÊÏä¡£
-	
-	¸ĞĞ»Àí½â~
-	"""
-	def __init__():
-		self.config = FLAGS.config
-		pass 
-
-	def enable_textdetect(self):
-		'''
-		¿ªÆôÊÓÆµ¼ì²â£¬´ÓÓ²¼şÊäÈë¶Ë»ñÈ¡ÊÓÆµÁ÷ÎÄ¼ş
-		Ó²¼şÅäÖÃ£ºLogitech C930C
-		@params:videoÊÓÆµÁ÷ÊäÈë¶Ë¿Ú
-		'''
-		pass
-
-	def generage_text_from_videostream(self):
-		pass 
-
-	def preprocess_exam(self):
-		pass
-
-	def summarize_exam_topic(self):
-		pass
-
-	def sentence2network(self):
-		pass 
-
-	def essay_writter_core(self):
-		pass
-
-	def scoring_to_best_essay(self):
-		pass 
-
-	def formatting_essay_output(self):
-		pass
-
-
-		
-def main(argv):
-    del argv
-    if FLAGS.gpu:
-        os.environ['CUDA_VISIBLE_DEVICES'] = FLAGS.gpu
-    else:
-        print('Please assign GPUs.')
-        exit()
-
-print("test sample in trained model...")
-if __name__ == "__main__":
-	try:
-		pass
-	except:
-		print("pipeline has failed...")
-	#dicts = result[0].split(":")
-	#plexity = result.get['ppl']
-	print("the final ppl score is: \n",scores )
-	print("the final text output as :", text)
-	print(sum(result))
